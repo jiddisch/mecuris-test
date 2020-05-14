@@ -36,16 +36,16 @@
       </button>
       <span fxHide fxShow.gt-xs>
         <button
-        mat-button
-        *ngFor="let nav of navigation"
-        [routerLink]="[nav.link]"
-        routerLinkActive="active"
-      >
-        {{ nav.label }}
-      </button>
+          mat-button
+          *ngFor="let nav of navigation"
+          [routerLink]="[nav.link]"
+          routerLinkActive="active"
+        >
+          {{ nav.label }}
+        </button>
       </span>
 
-      <div class="cart-icon-wrapper">
+      <div class="pointer cart-icon-wrapper">
         <mat-icon><fa-icon icon="shopping-cart"></fa-icon></mat-icon>
       </div>
     </mat-toolbar>
