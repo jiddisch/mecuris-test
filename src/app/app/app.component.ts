@@ -9,6 +9,24 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  navigation = [
+    {
+      link: '/login',
+      label: 'Login'
+    },
+    {
+      link: '/register',
+      label: 'Register'
+    },
+    {
+      link: '/products',
+      label: 'Products'
+    },
+    {
+      link: '/history',
+      label: 'History'
+    }
+  ];
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
