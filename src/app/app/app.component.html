@@ -3,9 +3,11 @@
     #drawer
     class="sidenav"
     fixedInViewport
+    fxShow
+    fxHide.gt-xs
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
+    [mode]="'push'"
+    [opened]="false"
     (click)="drawer.close()"
   >
     <mat-toolbar>Menu</mat-toolbar>
@@ -21,17 +23,31 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" fxLayoutAlign="space-between center">
       <button
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
+        fxShow
+        fxHide.gt-xs
       >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        <mat-icon fxFlex aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Mecuris Shop</span>
+      <span fxHide fxShow.gt-xs>
+        <button
+        mat-button
+        *ngFor="let nav of navigation"
+        [routerLink]="[nav.link]"
+        routerLinkActive="active"
+      >
+        {{ nav.label }}
+      </button>
+      </span>
+
+      <div class="cart-icon-wrapper">
+        <mat-icon><fa-icon icon="shopping-cart"></fa-icon></mat-icon>
+      </div>
     </mat-toolbar>
     <router-outlet #o="outlet"></router-outlet>
   </mat-sidenav-content>
