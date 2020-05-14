@@ -23,6 +23,10 @@ export class AppComponent {
       label: 'Products'
     },
     {
+      link: '/cart',
+      label: 'Cart'
+    },
+    {
       link: '/history',
       label: 'History'
     }
