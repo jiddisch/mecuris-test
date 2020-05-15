@@ -4,7 +4,7 @@ import {
   FaIconLibrary
 } from '@fortawesome/angular-fontawesome';
 import {
-  faShoppingCart
+  faShoppingCart, faSignInAlt, faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
@@ -14,6 +14,6 @@ import {
 })
 export class IconsModule {
   constructor(faIconLibrary: FaIconLibrary) {
-    faIconLibrary.addIcons(faShoppingCart);
+    faIconLibrary.addIcons(faShoppingCart, faSignInAlt, faSignOutAlt);
   }
 }

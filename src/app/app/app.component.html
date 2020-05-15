@@ -45,8 +45,35 @@
         </button>
       </span>
 
-      <div class="pointer cart-icon-wrapper" [routerLink]="'cart'">
-        <mat-icon><fa-icon icon="shopping-cart"></fa-icon></mat-icon>
+      <div class="icon-actions" fxLayout="row" fxLayoutGap="1rem">
+        <div
+          class="pointer logout-icon-wrapper"
+          [routerLink]="'products'"
+          *ngIf="isAuth$ | async; else loggedOut"
+          (click)="logout()"
+          fxLayout.gt-xs="row"
+          fxLayoutGap.gt-xs="1rem"
+        >
+          <div fxHide fxShow.gt-xs>Logout</div>
+          <mat-icon aria-hidden="false" aria-label="Logout"
+            ><fa-icon icon="sign-out-alt"></fa-icon
+          ></mat-icon>
+        </div>
+
+        <ng-template #loggedOut>
+          <div class="pointer login-icon-wrapper" [routerLink]="'login'" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="1rem">
+            <div fxHide fxShow.gt-xs>Login</div>
+            <mat-icon aria-hidden="false" aria-label="Login"
+              ><fa-icon icon="sign-in-alt"></fa-icon
+            ></mat-icon>
+          </div>
+        </ng-template>
+
+        <div class="pointer cart-icon-wrapper" [routerLink]="'cart'">
+          <mat-icon aria-hidden="false" aria-label="Cart"
+            ><fa-icon icon="shopping-cart"></fa-icon
+          ></mat-icon>
+        </div>
       </div>
     </mat-toolbar>
     <router-outlet #o="outlet"></router-outlet>

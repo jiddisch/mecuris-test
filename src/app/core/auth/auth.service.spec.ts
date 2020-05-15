@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
-
 import { AuthService } from './auth.service';
+import { Observable } from 'rxjs';
 
 describe('AuthService', () => {
   let service: AuthService;
@@ -13,4 +13,9 @@ describe('AuthService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should have an observable isAuth$', () => {
+    expect(service.isAuth$()).toBeInstanceOf(Observable);
+  });
+
 });

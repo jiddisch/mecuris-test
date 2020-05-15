@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
-import { map, shareReplay, tap } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
+import { AuthService } from '../core/auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +10,8 @@ import { map, shareReplay, tap } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  isAuth$ = this.authService.isAuth$();
   navigation = [
-    {
-      link: '/login',
-      label: 'Login'
-    },
-    {
-      link: '/register',
-      label: 'Register'
-    },
     {
       link: '/products',
       label: 'Products'
@@ -32,12 +26,16 @@ export class AppComponent {
     }
   ];
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService) {}
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
     map(result => result.matches),
     shareReplay()
   );
+
+  logout() {
+    this.authService.logout();
+  }
 
 }
