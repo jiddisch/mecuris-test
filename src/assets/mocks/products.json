@@ -1,0 +1,6 @@
+[
+  {"id": 1, "name": "Mecuris FirStep", "price": 500, "size": [28, 30, 32], "color": ["red", "green", "blue", "black"]},
+  {"id": 2, "name": "Mecuris NextStep", "price": 1000, "size": [32, 34, 36], "color": ["purple", "green", "blue", "black"]},
+  {"id": 3, "name": "Mecuris ComfyStep", "price": 1500, "size": [34, 36, 38], "color": ["yellow", "orange", "white", "black"]},
+  {"id": 4, "name": "Sonderlösungen", "price": 2000}
+]
