@@ -1,0 +1,22 @@
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "lt-sm" {
+    @media (max-width: 599px) {
+      @content;
+    }
+  }
+  @if $breakpoint == "gt-xs" {
+    @media (min-width: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint == "gt-md" {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  }
+}
+
+$light-background: #e8e8e8;
+$background-shadow: 3px 3px 4px 4px #cfd0d4;
+$gt-xs: 600px;
+$gt-md: 1280px;

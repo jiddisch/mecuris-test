@@ -1,3 +1,5 @@
+@import "./../../styles-variables.scss";
+
 .sidenav-container {
   height: 100%;
 }
@@ -20,3 +22,25 @@
   font-weight: 600;
 }
 
+mat-toolbar button:first-child {
+  padding-left: 0;
+}
+
+.container {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  position: relative;
+  max-width: $gt-xs;
+
+  @include respond-to("gt-md") {
+    max-width: $gt-md;
+  }
+
+  @include respond-to("gt-xs") {
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100vh - 8rem);
+    box-shadow: $background-shadow;
+    background-color: $light-background;
+  }
+}

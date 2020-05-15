@@ -1,0 +1,38 @@
+@import './../../../../styles-variables.scss';
+
+:host {
+
+  @include respond-to('gt-xs') {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% - 4rem);
+  }
+}
+
+form {
+  margin-top: 1rem;
+
+  @include respond-to('gt-xs') {
+    background-color: #fff;
+    padding: 2rem;
+    margin-top: 0;
+  }
+
+  .register-btn {
+
+    @include respond-to('gt-xs') {
+      width: auto;
+      align-self: center;
+      padding: 0 2rem;
+    }
+  }
+}
+
+.mat-divider {
+  margin: 1rem 0;;
+}
+
+.mat-form-field {
+  margin-bottom: 1rem;
+}

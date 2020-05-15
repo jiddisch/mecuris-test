@@ -1,3 +1,39 @@
-<button (click)="login()" [routerLink]="['/products']">Login</button>
-<hr />
-<a [routerLink]="[ '/register' ]">Register</a>
+<form [formGroup]="loginFormGroup" fxLayout="column">
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Ex. pat@example.com" formControlName="email" [errorStateMatcher]="matcher" required />
+    <mat-error *ngIf="loginFormGroup.controls.email.hasError('email') && !loginFormGroup.controls.email.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="loginFormGroup.controls.email.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="Password" formControlName="password" required />
+    <mat-error *ngIf="loginFormGroup.controls.password.hasError('minlength') && !loginFormGroup.controls.email.hasError('required')">
+      Password must contain at least 4 characters
+    </mat-error>
+    <mat-error *ngIf="loginFormGroup.controls.password.hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <button
+    type="button"
+    color="primary"
+    (click)="login()"
+    fxLayoutAlign="center center"
+    class="login-btn"
+    mat-raised-button
+  >
+    Login
+  </button>
+</form>
+
+<mat-divider></mat-divider>
+<a fxLayoutAlign="center center" [routerLink]="['/register']"
+  >Not a user? Register now!</a
+>

@@ -8,6 +8,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import {
+  ErrorStateMatcher,
+  ShowOnDirtyErrorStateMatcher,
+} from '@angular/material/core';
 
 @NgModule({
   declarations: [],
@@ -20,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatListModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   exports: [
     IconsModule,
@@ -31,6 +35,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatListModule,
     FlexLayoutModule,
+  ],
+  providers: [
+    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }
   ],
 })
 export class CoreModule {
