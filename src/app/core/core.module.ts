@@ -34,7 +34,7 @@ import {
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    FlexLayoutModule,
+    FlexLayoutModule
   ],
   providers: [
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }

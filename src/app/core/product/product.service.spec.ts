@@ -1,22 +1,23 @@
 import { TestBed } from '@angular/core/testing';
-import { ProductsService } from './products.service';
+
+import { ProductService } from './product.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('ProductsService', () => {
-  let service: ProductsService;
+describe('ProductService', () => {
+  let service: ProductService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule]
     });
-    service = TestBed.inject(ProductsService);
+    service = TestBed.inject(ProductService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
 
-  it('products$ should be an function', () => {
-    expect(service.products$).toBeInstanceOf(Function);
+  it('product$ should be a function', () => {
+    expect(service.product$).toBeInstanceOf(Function);
   });
 });

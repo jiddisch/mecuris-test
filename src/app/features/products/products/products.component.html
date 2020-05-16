@@ -1,1 +1,40 @@
-<p>products works!</p>
+<main
+  fxFlex
+  fxLayout="column"
+  fxLayout.gt-sm="row wrap"
+  fxLayoutAlign="space-between"
+  *ngIf="(products$ | async) as products"
+>
+  <mat-card
+    class="products-card"
+    fxLayout="column"
+    fxLayoutAlign="space-between"
+    *ngFor="let product of products"
+  >
+    <mat-card-header>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+      <mat-card-subtitle>{{ product.price | currency }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      mat-card-image
+      [src]="'./../../assets/images/' + product.image"
+      alt="Photo of {{ product.name }}"
+    />
+    <mat-card-content
+      fxFlex
+      fxLayout="column"
+      fxLayoutAlign="space-between"
+    >
+      <p>{{ product.description }}</p>
+      <button
+        color="primary"
+        fxLayoutAlign="center center"
+        mat-raised-button
+        [routerLink]="['/products/' + product.id]"
+        [state]="product"
+      >
+        Details
+      </button>
+    </mat-card-content>
+  </mat-card>
+</main>

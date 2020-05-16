@@ -1,0 +1,9 @@
+{
+  "id": 3,
+  "name": "Mecuris ComfyStep",
+  "price": 1500,
+  "description": "The prosthetic foot that can be customized to the wearer‘s rollover behaviour.",
+  "image": "comfy-step.jpg",
+  "size": [34, 36, 38],
+  "color": ["yellow", "orange", "white", "black"]
+}

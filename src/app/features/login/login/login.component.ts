@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { FormGroup, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
     if (this.loginFormGroup.status === 'VALID') {
       this.authService.login();
       this.router.navigate(['products']);
+      // TODO: Add success notification
     }
   }
 

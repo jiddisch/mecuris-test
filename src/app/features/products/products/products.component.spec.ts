@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductsComponent } from './products.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { Observable } from 'rxjs';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
@@ -8,6 +10,7 @@ describe('ProductsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       declarations: [ ProductsComponent ]
     })
     .compileComponents();
@@ -21,5 +24,9 @@ describe('ProductsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('products$ should be an observable', () => {
+    expect(component.products$).toBeTruthy();
   });
 });

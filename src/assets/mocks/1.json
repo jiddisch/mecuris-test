@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "name": "Mecuris FirStep",
+  "price": 500,
+  "description": "The pediatric prosthetic foot accompanies children from their first steps onwards. It can be adjusted to the millimeter and withstands the demands of small whirlwinds.",
+  "image": "fir-step.jpg",
+  "size": [28, 30, 32],
+  "color": ["red", "green", "blue", "black"]
+}

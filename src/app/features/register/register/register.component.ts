@@ -26,6 +26,7 @@ export class RegisterComponent implements OnInit {
     if (this.registerFormGroup.status === 'VALID') {
       this.authService.login();
       this.router.navigate(['products']);
+      // TODO: Add success notification
     }
   }
 }

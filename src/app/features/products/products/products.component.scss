@@ -1,0 +1,22 @@
+@import './../../../../styles-variables.scss';
+
+.mat-card {
+  margin: 2rem 0;
+  background-color: $gray-background-derken-10;
+
+  @include respond-to('gt-sm') {
+    width: calc((960px - 13rem) / 2);
+  }
+
+  @include respond-to('gt-md') {
+    width: calc((1280px - 13rem) / 3);
+  }
+}
+
+::ng-deep .products-card .mat-card-header-text {
+  margin: 0;
+}
+
+.mat-card-content p {
+  font-size: 1rem;
+}

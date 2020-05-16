@@ -9,6 +9,11 @@
       @content;
     }
   }
+  @if $breakpoint == "gt-sm" {
+    @media (min-width: 960px) {
+      @content;
+    }
+  }
   @if $breakpoint == "gt-md" {
     @media (min-width: 1280px) {
       @content;
@@ -16,7 +21,10 @@
   }
 }
 
-$light-background: #e8e8e8;
+$gray-background: #e8e8e8;
+$gray-background-derken-10: darken($gray-background, 10%);
 $background-shadow: 3px 3px 4px 4px #cfd0d4;
+
 $gt-xs: 600px;
+$gt-sm: 960px;
 $gt-md: 1280px;

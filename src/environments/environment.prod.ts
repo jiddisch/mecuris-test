@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  mocks: './../assets/mocks/'
+  mocksPath: './../assets/mocks/'
 };

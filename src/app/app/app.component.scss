@@ -2,6 +2,10 @@
 
 .sidenav-container {
   height: 100%;
+
+  @include respond-to("lt-sm") {
+    background-color: $gray-background;
+  }
 }
 
 .sidenav {
@@ -32,6 +36,10 @@ mat-toolbar button:first-child {
   position: relative;
   max-width: $gt-xs;
 
+  @include respond-to("gt-sm") {
+    max-width: $gt-sm;
+  }
+
   @include respond-to("gt-md") {
     max-width: $gt-md;
   }
@@ -41,6 +49,6 @@ mat-toolbar button:first-child {
     padding: 2rem;
     min-height: calc(100vh - 8rem);
     box-shadow: $background-shadow;
-    background-color: $light-background;
+    background-color: $gray-background;
   }
 }

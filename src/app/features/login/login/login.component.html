@@ -1,4 +1,4 @@
-<form [formGroup]="loginFormGroup" fxLayout="column">
+<form [formGroup]="loginFormGroup" fxLayout="column" action="#">
   <mat-form-field>
     <mat-label>Email</mat-label>
     <input matInput placeholder="Ex. pat@example.com" formControlName="email" [errorStateMatcher]="matcher" required />
@@ -22,7 +22,6 @@
   </mat-form-field>
 
   <button
-    type="button"
     color="primary"
     (click)="login()"
     fxLayoutAlign="center center"
