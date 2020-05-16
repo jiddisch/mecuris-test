@@ -3,14 +3,6 @@
 .mat-card {
   margin: 2rem 0;
   background-color: $gray-background-derken-10;
-
-  @include respond-to('gt-sm') {
-    width: calc((960px - 13rem) / 2);
-  }
-
-  @include respond-to('gt-md') {
-    width: calc((1280px - 13rem) / 3);
-  }
 }
 
 ::ng-deep .product-card .mat-card-header-text {
@@ -24,4 +16,10 @@
 ::ng-deep .product-card .mat-divider {
   position: relative !important;
   margin: 1rem 0 !important;
+}
+
+.mat-card-image {
+  @include respond-to('gt-sm') {
+    margin: 0;
+  }
 }

@@ -2,8 +2,10 @@
   <mat-card
     class="product-card"
     fxLayout="column"
+    fxLayout.gt-sm="row"
     fxLayoutAlign="space-between"
   >
+  <div fxFlex.gt-sm="40">
     <mat-card-header>
       <mat-card-title>{{ product.name }}</mat-card-title>
       <mat-card-subtitle>{{ product.price | currency }}</mat-card-subtitle>
@@ -13,7 +15,11 @@
       [src]="'./../../assets/images/' + product.image"
       alt="Photo of {{ product.name }}"
     />
-    <mat-card-content fxLayout="column" fxLayoutAlign="space-between">
+  </div>
+
+  <mat-divider fxHide fxShow.gt-sm [vertical]="true"></mat-divider>
+
+    <mat-card-content fxLayout="column" fxLayoutAlign="space-between" fxFlex.gt-sm="40">
       <p>{{ product.description }}</p>
 
       <form [formGroup]="productFormGroup" action="#" fxLayout="column">
@@ -53,7 +59,7 @@
 
         </div>
 
-        <mat-divider></mat-divider>
+        <mat-divider fxShow fxHide.gt-sm></mat-divider>
 
         <div fxLayout="row" fxLayoutAlign="space-around center">
           <button
