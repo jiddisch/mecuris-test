@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HistoryService } from 'src/app/core/history/history.service';
-import { tap } from 'rxjs/operators';
 import { History } from 'src/app/core/history/history.model';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -12,11 +11,13 @@ import { MatTableDataSource } from '@angular/material/table';
 export class HistoryComponent implements OnInit {
   displayedColumns = ['name', 'price', 'amount', 'totalPrice', 'date'];
   dataSource: MatTableDataSource<History>;
+  isData: boolean;
 
   constructor(private historyService: HistoryService) {}
 
   ngOnInit(): void {
     this.historyService.history$().subscribe((res) => {
+      this.isData = res.length > 0 ? true : false;
       this.dataSource = new MatTableDataSource(res);
     });
   }

@@ -1,0 +1,40 @@
+@import './../../../../styles-variables.scss';
+
+table {
+  width: 100%;
+}
+
+.mat-column-totalPrice {
+  @include respond-to('lt-sm') {
+    display: none;
+  }
+}
+
+.mat-column-size, .mat-column-color {
+  display: none;
+
+  @include respond-to('gt-sm') {
+    display: table-cell;
+  }
+}
+
+mat-divider {
+  margin: 1rem 0;
+}
+
+.total-price {
+  margin: 4rem 0;
+
+  span {
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+}
+
+::ng-deep .mat-form-field-infix {
+  width: 30px !important;
+}
+
+input {
+  width: auto !important;
+}

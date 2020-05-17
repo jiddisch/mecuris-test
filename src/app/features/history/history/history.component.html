@@ -1,3 +1,6 @@
+<h1>History</h1>
+<main>
+  <div *ngIf="isData">
 <mat-form-field>
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event)">
@@ -33,3 +36,9 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+  </div>
+  <ng-template #noData>
+    No History
+  </ng-template>
+
+</main>

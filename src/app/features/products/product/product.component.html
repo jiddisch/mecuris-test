@@ -54,7 +54,8 @@
           </mat-form-field>
 
           <mat-form-field fxFlex="20">
-            <input type="number" matInput placeholder="Amount" value="1" required>
+            <mat-label>Amount</mat-label>
+            <input type="number" matInput formControlName="amount" required>
           </mat-form-field>
 
         </div>
@@ -68,7 +69,7 @@
             mat-raised-button
             [routerLink]="['/products/' + product.id]"
             [state]="product"
-            (click)="addToCart()"
+            (click)="addToCart(product)"
           >
             Add to Cart
           </button>
