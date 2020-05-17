@@ -25,3 +25,34 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# Blueprint
+## Pages / Routing
+- login
+- logout
+- products
+- products/:id
+- cart
+- history
+
+## Technologies
+- Angular 9
+- Flex-Layout
+- Material Design
+- Font Awsome
+
+## work methods
+- scalable folder / module structure as recommended by experts to be: **core** for singletones, **shared** for common components, and **features** for the components.
+- Feature / routing modules allows lazy loading: For performance reasons, each page in the app has its own module.
+- The data of the product page will be taken directly from the products page, but if the product page is loaded directly from a url path, a request will be done from the server to get the data.
+- All global variables goes to the envirenment file, respectively.
+- CSS global variables and mixings goes to the style-variables.scss file.
+
+## TODO List
+- Creating a storage service to store the state locally / remotely 
+- Adding a state management like NgRX
+- Writing a deeper unit testing + e2e tesing
+- Creating a loader service to show a spinner until the data cames
+- Creating interceptors for error handling + requsts retring
+- Adding an interceptor of CanActivate for pages that needs authentication (like the History page)
+- Adding a summery of the total price on the cart page
