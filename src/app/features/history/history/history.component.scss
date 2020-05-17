@@ -1,0 +1,11 @@
+@import './../../../../styles-variables.scss';
+
+table {
+  width: 100%;
+}
+
+.total-price-column {
+  @include respond-to('lt-sm') {
+    display: none;
+  }
+}

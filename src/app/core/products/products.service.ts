@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class ProductsService {
 
   products$(): Observable<Product[]> {
-    return this.http.get<Product[]>(environment.mocksPath + 'products.json');
+    return this.http.get<Product[]>(`${environment.mocksPath}products.json`);
   }
 
   constructor(private http: HttpClient) { }

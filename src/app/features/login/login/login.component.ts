@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
       this.authService.login();
       this.router.navigate(['products']);
       // TODO: Add success notification
+      console.log(this.loginFormGroup.value);
     }
   }
 

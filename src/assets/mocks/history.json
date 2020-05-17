@@ -1,4 +1,4 @@
 [
-  {"id": 1, "name": "Mecuris NextStep", "price": "1000", "date": 1546300800},
-  {"id": 2, "name": "Mecuris ComfyStep", "price": "1500", "date": 1577836800}
+  {"id": 1, "name": "Mecuris NextStep", "price": "1000", "amount": 1, "date": 1589655377189},
+  {"id": 2, "name": "Mecuris ComfyStep", "price": "1500", "amount": 3, "date": 1569655177189}
 ]

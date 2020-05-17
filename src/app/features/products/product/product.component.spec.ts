@@ -27,4 +27,9 @@ describe('ProductComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be a function addToCard', () => {
+    expect(component.addToCart).toBeInstanceOf(Function);
+  });
+
 });

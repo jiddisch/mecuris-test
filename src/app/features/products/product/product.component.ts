@@ -42,8 +42,9 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart() {
-    if (this.productFormGroup.value) {
+    if (this.productFormGroup.status === 'VALID') {
       // TODO: Add success notification
+      this.router.navigate(['cart']);
       console.log(this.productFormGroup.value);
     }
   }

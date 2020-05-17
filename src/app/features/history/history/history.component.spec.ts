@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HistoryComponent } from './history.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('HistoryComponent', () => {
   let component: HistoryComponent;
@@ -8,6 +8,7 @@ describe('HistoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       declarations: [ HistoryComponent ]
     })
     .compileComponents();
@@ -21,5 +22,9 @@ describe('HistoryComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should be a function applyFilter', () => {
+    expect(component.applyFilter).toBeInstanceOf(Function);
   });
 });
