@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HistoryComponent } from './history.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { SharedModule } from 'src/app/shared/shared/shared.module';
 
 describe('HistoryComponent', () => {
   let component: HistoryComponent;
@@ -8,7 +9,7 @@ describe('HistoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, SharedModule],
       declarations: [ HistoryComponent ]
     })
     .compileComponents();

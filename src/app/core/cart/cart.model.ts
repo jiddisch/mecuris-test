@@ -5,6 +5,6 @@ export interface Cart {
   size?: number;
   color?: string;
   price: number;
-  totalPrice: number;
+  totalPrice?: number;
   date: number;
 }

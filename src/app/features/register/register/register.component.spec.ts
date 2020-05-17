@@ -9,6 +9,7 @@ import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { NotificationService } from 'src/app/core/notification/notification.service';
 
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
@@ -16,14 +17,14 @@ describe('RegisterComponent', () => {
   let service: AuthService;
   let router: Router;
   let debugElement: DebugElement;
+  let notificationService: NotificationService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegisterComponent ],
+      declarations: [RegisterComponent],
       imports: [RouterTestingModule, SharedModule, BrowserAnimationsModule],
-      providers: [AuthService]
-    })
-    .compileComponents();
+      providers: [AuthService, NotificationService],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -33,6 +34,7 @@ describe('RegisterComponent', () => {
     service = TestBed.inject(AuthService);
     router = TestBed.inject(Router);
     debugElement = fixture.debugElement;
+    notificationService = TestBed.inject(NotificationService);
   });
 
   it('should create', () => {
@@ -73,6 +75,7 @@ describe('RegisterComponent', () => {
     const button = debugElement.query(By.css('.register-btn')).nativeElement;
     spyOn(service, 'login');
     spyOn(router, 'navigate');
+    spyOn(notificationService, 'success');
 
     button.click();
 
@@ -83,4 +86,18 @@ describe('RegisterComponent', () => {
     expect(router.navigate).toHaveBeenCalled();
   });
 
+  it('register should call notificationService', () => {
+    const button = debugElement.query(By.css('.register-btn')).nativeElement;
+    spyOn(service, 'login');
+    spyOn(router, 'navigate');
+    spyOn(notificationService, 'success');
+
+    button.click();
+
+    component.registerFormGroup.controls['email'].setErrors(null);
+    component.registerFormGroup.controls['password'].setErrors(null);
+
+    component.register();
+    expect(notificationService.success).toHaveBeenCalled();
+  });
 });

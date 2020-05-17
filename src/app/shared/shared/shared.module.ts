@@ -8,7 +8,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [],
@@ -23,7 +24,8 @@ import {MatTableModule} from '@angular/material/table';
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -35,7 +37,8 @@ import {MatTableModule} from '@angular/material/table';
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule,
   ],
 })
 export class SharedModule {}

@@ -15,3 +15,13 @@ body {
 .pointer {
   cursor: pointer;
 }
+
+.info-notification-overlay {
+  color: #000;
+  background-color: yellow;
+}
+
+.success-notification-overlay {
+  color: #fff;
+  background-color: green;
+}

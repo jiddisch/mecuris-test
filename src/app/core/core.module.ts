@@ -12,6 +12,7 @@ import {
   ErrorStateMatcher,
   ShowOnDirtyErrorStateMatcher,
 } from '@angular/material/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [],
@@ -25,6 +26,7 @@ import {
     MatListModule,
     FlexLayoutModule,
     HttpClientModule,
+    MatSnackBarModule
   ],
   exports: [
     IconsModule,
@@ -34,7 +36,8 @@ import {
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSnackBarModule
   ],
   providers: [
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }

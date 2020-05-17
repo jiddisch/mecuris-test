@@ -9,6 +9,7 @@ import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { NotificationService } from 'src/app/core/notification/notification.service';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -16,12 +17,13 @@ describe('LoginComponent', () => {
   let service: AuthService;
   let router: Router;
   let debugElement: DebugElement;
+  let notificationService: NotificationService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
       imports: [RouterTestingModule, SharedModule, BrowserAnimationsModule],
-      providers: [AuthService]
+      providers: [AuthService, NotificationService]
     })
     .compileComponents();
   }));
@@ -33,6 +35,7 @@ describe('LoginComponent', () => {
     service = TestBed.inject(AuthService);
     router = TestBed.inject(Router);
     debugElement = fixture.debugElement;
+    notificationService = TestBed.inject(NotificationService);
   });
 
   it('should create', () => {
@@ -73,6 +76,7 @@ describe('LoginComponent', () => {
     const button = debugElement.query(By.css('.login-btn')).nativeElement;
     spyOn(service, 'login');
     spyOn(router, 'navigate');
+    spyOn(notificationService, 'success');
 
     button.click();
 
@@ -81,6 +85,21 @@ describe('LoginComponent', () => {
 
     component.login();
     expect(router.navigate).toHaveBeenCalled();
+  });
+
+  it('login should call notificationService', () => {
+    const button = debugElement.query(By.css('.login-btn')).nativeElement;
+    spyOn(service, 'login');
+    spyOn(router, 'navigate');
+    spyOn(notificationService, 'success');
+
+    button.click();
+
+    component.loginFormGroup.controls['email'].setErrors(null);
+    component.loginFormGroup.controls['password'].setErrors(null);
+
+    component.login();
+    expect(notificationService.success).toHaveBeenCalled();
   });
 
 });
